@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
@@ -37,7 +37,9 @@
                     timer: 1500
                 });
             </script>
+
         <?php
+            session_destroy();
         }
         ?>
 

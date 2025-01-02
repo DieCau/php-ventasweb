@@ -22,7 +22,7 @@ if ($contador == 0) {
     $_SESSION["mensaje"] = "Error. Datos incorrectos";
     header("Location: ".$URL."/login");
 } else {
-    echo "Datos validados.";
+    //echo "Datos validados.";
     session_start();
     $_SESSION["sesion_email"] = $email;
     header("Location: ".$URL."/index.php");
