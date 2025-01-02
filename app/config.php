@@ -13,3 +13,5 @@ try {
   print_r($e);
   echo "Error de conexion a la Base de Datos";
 }
+
+$URL = "http://localhost/ventasweb";

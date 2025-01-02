@@ -12,12 +12,18 @@ $query->execute();
 $usuarios = $query->fetchAll(PDO::FETCH_ASSOC);
 foreach ($usuarios as $usuario) {
     $contador = $contador + 1;
-    $email_tabla = $usuario["email"];
+    $email = $usuario["email"];
     $nombres = $usuario["nombres"];
 }
 
 if ($contador == 0) {
-    echo "Datos incorrectos. Vuelva a intentar";
+    //echo "Datos incorrectos. Vuelva a intentar";
+    session_start();
+    $_SESSION["mensaje"] = "Error. Datos incorrectos";
+    header("Location: ".$URL."/login");
 } else {
     echo "Datos validados.";
+    session_start();
+    $_SESSION["sesion_email"] = $email;
+    header("Location: ".$URL."/index.php");
 }
