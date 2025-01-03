@@ -27,3 +27,5 @@ if ($contador == 0) {
     $_SESSION["sesion_email"] = $email;
     header("Location: ".$URL."/index.php");
 }
+
+?>
