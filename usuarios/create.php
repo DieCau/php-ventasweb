@@ -20,8 +20,53 @@ include("../layout/parte1.php"); ?>
   <!-- Main content -->
   <div class="content">
     <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-5">
+        <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">Ingrese los Datos Para Registrar Usuarios Nuevos</h3>
 
-      Contenido del Sistema
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                </button>
+              </div>
+              <!-- /.card-tools -->
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body"  style="display: block;">
+              <div class="row">
+                <div class="col-md-12">
+                  <form action="/app/controllers/usuarios/crearUsuarioController.php" method="post">
+                    <div class="form-group">
+                      <label for="">Nombres</label>
+                      <input type="text" name="nombres" class="form-control" placeholder="Ingrese el Nombre de Nuevo Usuario...">
+                    </div>
+                    <div class="form-group">
+                      <label for="">Email</label>
+                      <input type="email" name="email" class="form-control" placeholder="Ingrese el Email de Nuevo Usuario...">
+                    </div>
+                    <div class="form-group">
+                      <label for="">Password</label>
+                      <input type="password" name="password_user" class="form-control">
+                    </div> 
+                    <div class="form-group">
+                      <label for="">Repetir Password</label>
+                      <input type="password" name="password_repeat" class="form-control">
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                      <a href="" class="btn btn-secondary">Cancelar</a>
+                      <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+
+                  </form>
+                </div>
+              </div>             
+            </div>
+            <!-- /.card-body -->
+          </div>
+        </div>
+      </div>      
     </div>
     <!-- /.container-fluid -->
   </div>

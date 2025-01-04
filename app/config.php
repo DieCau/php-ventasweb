@@ -15,3 +15,6 @@ try {
 }
 
 $URL = "http://localhost/ventasweb";
+
+date_default_timezone_set('America/Argentina/Tucuman');
+$fechaHora = date('Y-m-d H:i:s'); 

@@ -15,6 +15,7 @@
   <!-- SweetAlert2 CDN -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -94,7 +95,7 @@
             </li>
             <li class="nav-item">
               <a href="<?php echo $URL; ?>/app/controllers/login/logoutController.php" class="nav-link" style="background-color:rgb(212, 58, 58)">
-                <i class="nav-icon fas fa-door-closed"></i>
+                <i class="nav-icon fas fa-power-off"></i>
                 <p>
                   Cerrar Sesión
                 </p>
