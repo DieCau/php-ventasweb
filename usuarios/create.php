@@ -36,7 +36,7 @@ include("../layout/parte1.php"); ?>
             <div class="card-body"  style="display: block;">
               <div class="row">
                 <div class="col-md-12">
-                  <form action="/app/controllers/usuarios/crearUsuarioController.php" method="post">
+                  <form action="../app/controllers/usuarios/crearUsuarioController.php" method="post">
                     <div class="form-group">
                       <label for="">Nombres</label>
                       <input type="text" name="nombres" class="form-control" placeholder="Ingrese el Nombre de Nuevo Usuario...">
