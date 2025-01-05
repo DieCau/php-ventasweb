@@ -39,19 +39,19 @@ include("../layout/parte1.php"); ?>
                   <form action="../app/controllers/usuarios/crearUsuarioController.php" method="post">
                     <div class="form-group">
                       <label for="">Nombres</label>
-                      <input type="text" name="nombres" class="form-control" placeholder="Ingrese el Nombre de Nuevo Usuario...">
+                      <input type="text" name="nombres" class="form-control" placeholder="Ingrese el Nombre de Nuevo Usuario..." required>
                     </div>
                     <div class="form-group">
                       <label for="">Email</label>
-                      <input type="email" name="email" class="form-control" placeholder="Ingrese el Email de Nuevo Usuario...">
+                      <input type="email" name="email" class="form-control" placeholder="Ingrese el Email de Nuevo Usuario..." required>
                     </div>
                     <div class="form-group">
                       <label for="">Password</label>
-                      <input type="password" name="password_user" class="form-control">
+                      <input type="password" name="password_user" class="form-control" required>
                     </div> 
                     <div class="form-group">
                       <label for="">Repetir Password</label>
-                      <input type="password" name="password_repeat" class="form-control">
+                      <input type="password" name="password_repeat" class="form-control" required>
                     </div>
                     <hr>
                     <div class="form-group">
