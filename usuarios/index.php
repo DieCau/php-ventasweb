@@ -37,21 +37,22 @@ include("../app/controllers/usuarios/listaUsuariosController.php"); ?>
             <!-- /.card-header -->
             <div class="card-body"  style="display: block;">
               <table class="table table-bordered table-hover table-striped table-sm">
-                <tr>
-                  <th>Nro</th>
-                  <th>Nombre</th>
+                <tr class="text-center">
+                  <th>Nº</th>
+                  <th>Nombres</th>
                   <th>Email</th>
                 </tr>
                 <tbody>
                   <?php ;
-                    foreach ($usuarios_datos as $usuarios_dato) {
-                      echo "<tr>";
-                      echo "<td>" . $usuarios_dato['id_usuario'] . "</td>";
-                      echo "<td>" . $usuarios_dato['nombres'] . "</td>";
-                      echo "<td>" . $usuarios_dato['email'] . "</td>";
-                      echo "</tr>";                      
+                  $contador = 0;
+                    foreach ($usuarios_datos as $usuarios_dato) { ?>
+                      <tr class="text-center">
+                      <td><?php echo $contador = $contador + 1; ?></td>
+                      <td><?php echo $usuarios_dato['nombres']; ?></td>
+                      <td><?php echo $usuarios_dato['email']; ?></td>
+                    </tr>                     
+                    <?php 
                     }
-
                   ?>
                 </tbody>
               </table>
