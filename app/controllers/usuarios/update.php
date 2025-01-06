@@ -7,27 +7,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $email = trim($_POST['email']);
   $password_user = trim($_POST['password_user']);
   $password_repeat = trim($_POST['password_repeat']);
+  $id_usuario = trim($_POST['id_usuario']);
 
-  $token = bin2hex(random_bytes(50));
   $fyh_actualizacion = date('Y-m-d H:i:s');
 
   if ($password_user == $password_repeat) {
     $hashedPassword = password_hash($password_user, PASSWORD_BCRYPT); 
     
-    $sql = "INSERT INTO tb_usuarios (nombres, email, password_user, token, fyh_creacion, fyh_actualizacion) VALUES (:nombres, :email, :password_user, :token, :fyh_creacion, :fyh_actualizacion)";
+    $sql = "UPDATE tb_usuarios 
+    SET nombres:nombres, email:email, password_user:password_user, token:token, fyh_creacion:fyh_creacion, fyh_actualizacion:fyh_actualizacion
+    WHERE id_usuario = :id_usuario";
+    
     $stmt = $pdo->prepare($sql);
     try {
       $stmt->execute([
+        ':id_usuario' => $id_usuario,
         ':nombres' => $nombres,
         ':email' => $email,
+        'token' => $token,
         ':password_user' => $hashedPassword,
-        ':token' => $token,
-        ':fyh_creacion' => $fechaHora,
         ':fyh_actualizacion' => $fyh_actualizacion
     ]);
 
     session_start();
-    $_SESSION['mensaje'] = "El usuario ha sido registrado exitosamente";
+    $_SESSION['mensaje'] = "El usuario ha sido actualizado exitosamente";
     header("Location: " . $URL . "/usuarios");
     
     } catch (PDOException $e) {
@@ -37,6 +40,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   }else {
     session_start();
     $_SESSION['mensaje'] = "Las contraseñas no coinciden";
-    header("Location: " . $URL . "/usuarios/create.php");
+    header("Location: " . $URL . "/usuarios/update.php?id='.$id_usuario'");
   }
 }

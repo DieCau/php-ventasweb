@@ -18,7 +18,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
-<body class="hold-transition login-page">
+<body class="login-page" style="--opacidad-negro: 0.2; background-image: linear-gradient(rgba(0, 0, 0, var(--opacidad-negro)), rgba(0, 0, 0, var(--opacidad-negro))), url('../public/images/back_main.jpeg'); background-size: cover;">
     <div class="login-box">
         <!-- /.login-logo -->
 
@@ -29,13 +29,14 @@
             $respuesta = $_SESSION["mensaje"]; ?>
 
             <script>
-                Swal.fire({
-                    position: "top-end",
-                    icon: "error",
-                    title: "<?php echo $respuesta; ?>",
-                    showConfirmButton: false,
-                    timer: 1500
-                });
+                    Swal.fire({
+                        title: "Error",
+                        text: "<?php echo $respuesta; ?>",
+                        icon: "error",
+                        position: "center",
+                        showConfirmButton: false,
+                        timer: 1500                    
+                    });
             </script>
 
         <?php
@@ -43,21 +44,18 @@
         }
         ?>
 
-        <center>
-            <img src="../public/images/login_logo.png" alt="login-logo" width="300">
-        </center>
 
         <br />
-        <div class="card card-outline card-primary">
+        <div class="card card-outline card-primary" style="background-color: transparent; border: 2px solid white; backdrop-filter: blur(10px);">
             <div class="card-header text-center">
-                <a href="../public/templates/AdminLTE-3.2.0/index2.html" class="h1"><b>Sistema de </b>VENTAS</a>
+                <a href="../public/templates/AdminLTE-3.2.0/index2.html" class="h1 text-white"><b>Sistema de </b>VENTAS</a>
             </div>
             <div class="card-body">
-                <p class="login-box-msg">Ingrese para Iniciar su Sesion</p>
+                <p class="login-box-msg text-white">Ingrese para Iniciar su Sesion</p>
 
-                <form action="../app/controllers/login/loginController.php" method="post">
+                <form action="../app/controllers/login/loginController.php" method="post" autocomplete="off">
                     <div class="input-group mb-3">
-                        <input type="email" name="email" class="form-control" placeholder="Email">
+                        <input type="email" name="email" class="form-control" placeholder="Email" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
@@ -65,7 +63,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" name="password_user" class="form-control" placeholder="Password">
+                        <input type="password" name="password_user" class="form-control" placeholder="Password" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
@@ -88,6 +86,8 @@
         <!-- /.card -->
     </div>
     <!-- /.login-box -->
+
+
 
     <!-- jQuery -->
     <script src="../public/templates/AdminLTE-3.2.0/plugins/jquery/jquery.min.js"></script>
