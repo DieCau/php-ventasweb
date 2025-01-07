@@ -21,21 +21,3 @@ try {
 $fechaHora = date('Y-m-d H:i:s');
 
 $URL = "http://localhost/ventasweb";
-
-
-if(isset($_SESSION["mensaje"])) {
-  $respuesta = $_SESSION["mensaje"];?>
-
-  <script>
-  Swal.fire({
-      position: "center",
-      icon: "error",
-      title: "<?php echo $respuesta; ?>",
-      showConfirmButton: false,
-      timer: 1500
-  });
-  </script>';
-
-<?php 
-  unset($_SESSION["mensaje"]);
-}

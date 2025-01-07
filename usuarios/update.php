@@ -44,11 +44,11 @@ include("../app/controllers/usuarios/updateUsuarioController.php");
                     <input type="text" name="id_usuario" value="<?php echo $id_usuario_get; ?>" hidden>
                     <div class="form-group">
                       <label for="">Nombres</label>
-                      <input type="text" name="nombres" value="<?php echo $nombres; ?>" class="form-control" placeholder="Ingrese el Nombre de Nuevo Usuario..." required>
+                      <input type="text" name="nombres" value="<?php echo $nombres; ?>" class="form-control">
                     </div>
                     <div class="form-group">
                       <label for="">Email</label>
-                      <input type="email" name="email" value="<?php echo $email; ?>" class="form-control" placeholder="Ingrese el Email de Nuevo Usuario..." required>
+                      <input type="email" name="email" value="<?php echo $email; ?>" class="form-control">
                     </div>
                     <div class="form-group">
                       <label for="">Password</label>
@@ -79,4 +79,5 @@ include("../app/controllers/usuarios/updateUsuarioController.php");
 </div>
 <!-- /.content-wrapper -->
 
+<?php include("../layout/mensajes.php"); ?>
 <?php include("../layout/parte2.php"); ?>
