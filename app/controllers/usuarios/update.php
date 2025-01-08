@@ -38,6 +38,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   }else {
     session_start();
     $_SESSION['mensaje'] = "Las contraseñas no coinciden";
-    header("Location: ". $URL ."/usuarios/update.php?id='.$id_usuario'");
+    header("Location: ". $URL ."/usuarios/update.php?id=" . $id_usuario);
   }
 }
