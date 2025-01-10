@@ -7,6 +7,7 @@ $query_usuarios = $pdo->prepare($sql_usuarios);
 $query_usuarios->execute();
 $usuarios_datos = $query_usuarios->fetchAll(PDO::FETCH_ASSOC);
 
+// Recursividad
 foreach ($usuarios_datos as $usuarios_dato) {
   $nombres = $usuarios_dato['nombres'];
   $email = $usuarios_dato['email'];
