@@ -1,9 +1,9 @@
 <?php 
 
-// Set the default timezone
+// Setear el horario por default de Zona
 date_default_timezone_set('America/Argentina/Tucuman');
 
-// Database connection variables
+// Variables de Conexion a la BDD
 $host = 'localhost';
 $username = 'root';
 $password = 'root';
@@ -17,7 +17,7 @@ try {
   die("Error de conexion a la Base de Datos: " . $e->getMessage());
 }
 
-// Get the current date and time
+// Obtener el dia y la hora correctamente!
 $fechaHora = date('Y-m-d H:i:s');
 
 $URL = "http://localhost/ventasweb";
